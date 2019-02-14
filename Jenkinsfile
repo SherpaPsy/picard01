@@ -5,6 +5,9 @@ pipeline {
 		dockerImage = ""
 	}
 	agent any
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
+	}
 	stages {
 		stage('Build') {
 			steps {
