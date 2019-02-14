@@ -5,8 +5,8 @@ if  newman run Picard01.postman_collection.json; then
 	echo "Newman delivers again!"
 else
 	echo "Test failed - stopping container" 
-	if docker container stop node-app1;then
-		echo "container shutdown completed"
+	if docker container stop $1;then
+		echo "Container $1 shutdown completed"
 	else
 		echo "Oh oh! Problem down by the docks!"
 	fi

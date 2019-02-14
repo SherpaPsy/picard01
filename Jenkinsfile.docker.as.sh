@@ -3,29 +3,27 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        dockerImage = docker.build dockerReg + ":$BUILD_NUMBER"
-		dockerImage
+        sh 'docker image build -t node-app1 .'
       }
     }
     stage('Run') {
       steps {
-        sh 'docker container run -d -p 8090:3000 --rm --name dockerImage dockerImage'
+        sh 'docker container run -d -p 8090:3000 --rm --name node-app1 node-app1'
       }
     }
     stage('Test') {
       steps {
-        sh './newmantest.sh dockerImage'
+        sh './newmantest.sh'
       }
     }
     stage('Cleanup') {
       steps {
-        sh 'docker container stop dockerImage'
+        sh 'docker container stop node-app1'
       }
     }
   }
   environment {
     dockerReg = 'sherpapsy/node-app1'
     dockerRegCred = 'docker'
-	dockerImage = ''
   }
 }
