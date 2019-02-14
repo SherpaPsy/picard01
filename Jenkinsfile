@@ -16,17 +16,17 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'docker container run -d -p 8090:3000 --rm --name dockerImage dockerImage'
+        sh 'docker container run -d -p 8090:3000 --rm --name $dockerImage $dockerImage'
       }
     }
     stage('Test') {
       steps {
-        sh './newmantest.sh dockerImage'
+        sh './newmantest.sh $dockerImage'
       }
     }
     stage('Cleanup') {
       steps {
-        sh 'docker container stop dockerImage'
+        sh 'docker container stop $dockerImage'
       }
     }
   }
