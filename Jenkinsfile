@@ -1,8 +1,8 @@
 pipeline {
 	environment {
-    dockerReg = 'sherpapsy/node-app1'
+    dockerReg = "sherpapsy/node-app1"
     dockerRegCred = 'docker'
-	dockerImage = ''
+	dockerImage = ""
   }
   agent any
   stages {
