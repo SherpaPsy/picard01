@@ -15,18 +15,18 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'docker container run -d -p 8090:3000 --rm --name $dockerReg:$BUILD_NUMBER $dockerReg:$BUILD_NUMBER'
-		//sh 'echo "Docker image is: $dockerReg:$BUILD_NUMBER"'
+        sh 'docker container run -d -p 8090:3000 --rm --name $BUILD_TAG $dockerReg:$BUILD_TAG'
+		//sh 'echo "Docker container is: $BUILD_TAG"'
       }
     }
     stage('Test') {
       steps {
-        sh './newmantest.sh $dockerReg:$BUILD_NUMBER'
+        sh './newmantest.sh $BUILD_TAG'
       }
     }
     stage('Cleanup') {
       steps {
-        sh 'docker container stop $dockerReg:$BUILD_NUMBER'
+        sh 'docker container stop $BUILD_TAG'
       }
     }
   }
