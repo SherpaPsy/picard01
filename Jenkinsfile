@@ -15,8 +15,8 @@ pipeline {
     }
     stage('Run') {
       steps {
-        //sh 'docker container run -d -p 8090:3000 --rm --name $dockerImage $dockerImage'
-		sh 'echo "Docker image is: $dockerReg:$BUILD_NUMBER"'
+        sh 'docker container run -d -p 8090:3000 --rm --name $dockerReg:$BUILD_NUMBER $dockerReg:$BUILD_NUMBER'
+		//sh 'echo "Docker image is: $dockerReg:$BUILD_NUMBER"'
       }
     }
     stage('Test') {
