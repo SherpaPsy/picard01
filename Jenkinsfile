@@ -10,7 +10,7 @@ pipeline {
       steps {
 		script {
 			dockerImage = docker.build dockerReg + ":$BUILD_NUMBER"
-			dockerImage
+			echo "${dockerImage}"
 		}
       }
     }
