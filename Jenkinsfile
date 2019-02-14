@@ -17,7 +17,7 @@ pipeline {
     stage('Run') {
       steps {
         //sh 'docker container run -d -p 8090:3000 --rm --name $dockerImage $dockerImage'
-		sh 'echo "Docker image is: $dockerImage"'
+		sh 'echo "Docker image is: ${dockerImage}"'
       }
     }
     stage('Test') {
