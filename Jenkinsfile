@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh './newmantest.sh $dockerReg:$BUILD_NUMBER"'
+        sh './newmantest.sh $dockerReg:$BUILD_NUMBER'
       }
     }
     stage('Cleanup') {
