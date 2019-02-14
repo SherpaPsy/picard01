@@ -8,8 +8,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        dockerImage = docker.build dockerReg + ":$BUILD_NUMBER"
-		dockerImage
+		script {
+			dockerImage = docker.build dockerReg + ":$BUILD_NUMBER"
+			dockerImage
+		}
       }
     }
     stage('Run') {
