@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'docker container run -d -p 8090:3000 --rm --name $BUILD_TAG $dockerReg:$BUILD_TAG'
+        sh 'docker container run -d -p 8090:3000 --rm --name $BUILD_TAG $dockerReg:$BUILD_NUMBER'
 		//sh 'echo "Docker container is: $BUILD_TAG"'
       }
     }
