@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "19552843-b153-494f-9057-3ebb6f0822b8",
+		"name": "Picard01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://tonto.robotinthebasement.local:8090",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b92eb599-4b4c-4b1c-975d-90736cf1eef0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"You Deserve The Captain's Applause\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://tonto.robotinthebasement.local:8090",
+					"protocol": "http",
+					"host": [
+						"tonto",
+						"robotinthebasement",
+						"local"
+					],
+					"port": "8090"
+				},
+				"description": "Picard01 Test script for Newman"
+			},
+			"response": []
+		}
+	]
+}
