@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'docker container run -d -p 8081:3000 --rm --name node-app1 node-app1'
+        sh 'docker container run -d -p 8090:3000 --rm --name node-app1 node-app1'
       }
     }
     stage('Test') {
