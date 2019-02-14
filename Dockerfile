@@ -58,12 +58,12 @@ CMD /sbin/tini -- node ./bin/www
 
 
 ###############################
-# build command: docker image build -t node-app1 .
-# run command: docker container run -d -p 80:3000 --rm --name node-app1 node-app1
-# tag command: docker image tag node-app1 sherpapsy/node-app1
-# push command: docker image push sherpapsy/node-app1
+# build command: docker image build -t picard01 .
+# run command: docker container run -d -p 80:3000 --rm --name picard01 picard01
+# tag command: docker image tag picard01 sherpapsy/picard01
+# push command: docker image push sherpapsy/picard01
 # delete images locally then
-# pull and run image: docker container run -d -p 80:3000 --rm --name node-app1 sherpapsy/node-app1
+# pull and run image: docker container run -d -p 80:3000 --rm --name picard01 sherpapsy/picard01
 
 
 
