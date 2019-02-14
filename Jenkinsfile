@@ -29,5 +29,6 @@ pipeline {
         sh 'docker container stop $BUILD_TAG'
       }
     }
+	// Add Publish Command, and if successful clean up local image and profit!
   }
 }
