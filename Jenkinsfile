@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh './newmantest.sh $dockerImage'
+        sh './newmantest.sh ${dockerImage}'
       }
     }
     stage('Cleanup') {
