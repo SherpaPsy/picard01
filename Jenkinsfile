@@ -1,4 +1,9 @@
 pipeline {
+	environment {
+    dockerReg = 'sherpapsy/node-app1'
+    dockerRegCred = 'docker'
+	dockerImage = ''
+  }
   agent any
   stages {
     stage('Build') {
@@ -22,10 +27,5 @@ pipeline {
         sh 'docker container stop dockerImage'
       }
     }
-  }
-  environment {
-    dockerReg = 'sherpapsy/node-app1'
-    dockerRegCred = 'docker'
-	dockerImage = ''
   }
 }
