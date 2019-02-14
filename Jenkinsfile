@@ -16,5 +16,10 @@ pipeline {
         sh ' newman run Picard01.postman_collection.json'
       }
     }
+    stage('Cleanup') {
+      steps {
+        sh 'docker container stop node-app1'
+      }
+    }
   }
 }
