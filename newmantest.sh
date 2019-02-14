@@ -1,4 +1,15 @@
 #!/bin/sh
 echo "What makes you think I’m lookin’ for trouble?" 
-newman run Picard01.postman_collection.json || echo "Test failed - stopping container"; docker container stop node-app1; exit 1
+# Prefer to do this on one line, but as its multiple commands, going to if it out.
+if  newman run Picard01.postman_collection.json; then
+	echo "Newman delivers again!"
+else
+	echo "Test failed - stopping container" 
+	if docker container stop node-app1;then
+		echo "container shutdown completed"
+	else
+		echo "Oh oh! Problem down by the docks!"
+	fi
+	exit 1
+fi
 
