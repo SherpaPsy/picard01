@@ -24,11 +24,20 @@ pipeline {
         sh './newmantest.sh $BUILD_TAG'
       }
     }
+	stage('Publish') {
+      steps {
+		script {
+			docker.withRegistry( '', dockerRegCred ) {
+            dockerImage.push()
+		}
+      }
+    }
     stage('Cleanup') {
       steps {
         sh 'docker container stop $BUILD_TAG'
+		//and if successful clean up local image 
       }
     }
-	// Add Publish Command, and if successful clean up local image and profit!
+	// Add Publish Command and profit!
   }
 }
