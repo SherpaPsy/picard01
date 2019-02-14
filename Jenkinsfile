@@ -22,4 +22,8 @@ pipeline {
       }
     }
   }
+  environment {
+    dockerReg = 'sherpapsy/node-app1'
+    dockerRegCred = 'docker'
+  }
 }
