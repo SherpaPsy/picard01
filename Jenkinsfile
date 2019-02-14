@@ -32,6 +32,7 @@ pipeline {
 		}
       }
     }
+	}
     stage('Cleanup') {
       steps {
         sh 'docker container stop $BUILD_TAG'
