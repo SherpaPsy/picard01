@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh ' newman run Picard01.postman_collection.json'
+        sh './newmantest.sh'
       }
     }
     stage('Cleanup') {
