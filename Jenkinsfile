@@ -31,6 +31,8 @@ pipeline {
 				script {
 					docker.withRegistry( '', dockerRegCred ) {
 						dockerImage.push()
+						//unsure yet how to tag and push with .push() - but want both the build tagged artifact and latest
+						sh 'docker push sherpapsy/picard01:latest'
 					}
 				}
 			}

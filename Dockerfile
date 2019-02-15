@@ -61,9 +61,10 @@ CMD /sbin/tini -- node ./bin/www
 # build command: docker image build -t picard01 .
 # run command: docker container run -d -p 80:3000 --rm --name picard01 picard01
 # tag command: docker image tag picard01 sherpapsy/picard01
-# push command: docker image push sherpapsy/picard01
-# delete images locally then
-# pull and run image: docker container run -d -p 80:3000 --rm --name picard01 sherpapsy/picard01
+# push command: docker image push sherpapsy/picard01:latest
+# delete images locally:  docker image rm picard01
+# pull image: docker image pull sherpapsy/picard01:latest
+# run image: docker container run -d -p 80:3000 --rm --name picard01 sherpapsy/picard01:latest
 
 
 
