@@ -32,7 +32,7 @@ pipeline {
 					docker.withRegistry( '', dockerRegCred ) {
 						//pushing twice - tag for build and for latest
 						dockerImage.push()
-						dockerImage.push(latest)
+						dockerImage.push('latest')
 					}
 				}
 			}
